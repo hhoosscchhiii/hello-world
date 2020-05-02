@@ -29,7 +29,7 @@
       # - run: npm run test
 # Test 3 - Ruby - workflow test - no Orb config
 version: 2
- jobs: # we now have TWO jobs, so that a workflow can coordinate them!
+jobs: # we now have TWO jobs, so that a workflow can coordinate them!
    one: # This is our first job.
      docker: # it uses the docker executor
        - image: circleci/ruby:2.4.1 # specifically, a docker image with ruby 2.4.1
@@ -49,6 +49,6 @@ version: 2
  workflows:
    version: 2
    one_and_two: # this is the name of our workflow
-     jobs: # and here we list the jobs we are going to run.
+     jobs: # and here we list the jobs we are going to run
        - one
        - two
