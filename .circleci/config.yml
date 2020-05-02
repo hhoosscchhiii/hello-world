@@ -56,7 +56,7 @@ jobs: # we now have TWO jobs, so that a workflow can coordinate them!
        - attach_workspace:
         # Must be absolute path or relative path from working_directory
         at: my_workspace
-        - run: |
+       - run: |
         if [[ $(cat my_workspace/echo-output) == "Trying out workspaces" ]]; then
             echo "It worked!";
         else
@@ -69,6 +69,6 @@ workflows:
     jobs: # and here we list the jobs we are going to run
       - one
       - two:
-        requires:
-            - one
+            requires:
+                - one
       # the end
